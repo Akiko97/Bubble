@@ -46,7 +46,7 @@ void main() {
   uv = vec2(fract( uv.x * 4.0 ), uv.y);
   // distortion
   vec2 uvOffset = 0.01 * vec2(cos(uv.y * 20.), sin(uv.x * 20.));
-  vec3 color = texture2D(u_texture, uv + uvOffset + v_mvViewPosition.y / 50.0).rgb;
+  vec3 color = texture2D(u_texture, uv + uvOffset + v_mvViewPosition.xy / 50.0).rgb;
   gl_FragColor.rgb = mix(lightColor, color, 0.3);
   gl_FragColor.a = u_alpha;
 }`,
